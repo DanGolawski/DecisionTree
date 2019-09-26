@@ -19,4 +19,5 @@ rne = calculator.calculateRootNodeEntropy(df['Eat'].to_list())
 # 2. Gain for every attribute
 for attr in df.columns[:-1]:
     # calculator.calculateGainForAttribute(rne, {attr: df[attr].to_list(), 'Eat': df['Eat'].to_list()})
-    calculator.calculateGainForAttribute(rne, df[[attr, 'Eat']])
+    print(calculator.calculateGainForAttribute(rne, df[[attr, 'Eat']]))
+

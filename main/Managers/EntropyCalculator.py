@@ -11,7 +11,7 @@ class EntropyCalculator:
             calculation -= proportion * log2(proportion)
         return calculation
 
-    def calculateGainForAttribute(self, entropy, list):
+    def calculateGainForAttribute(self, main_entropy, list):
         col_names = list.columns.to_list()
         unique_attr = list.iloc[:, 0].unique()
         unique_reslt = list.iloc[:, -1].unique()
@@ -28,5 +28,5 @@ class EntropyCalculator:
                 if internal_proportion != 0:
                     internal_sum += internal_proportion * log2(internal_proportion)
             entropy += -proportion * internal_sum
-            print(ua + '...' + str(entropy))
-        return entropy
+            # print(ua + '...' + str(entropy))
+        return main_entropy - entropy
