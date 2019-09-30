@@ -1,11 +1,13 @@
 class Tree:
 
     name = None
-    nodes = {}
+    nodes = []
 
-    def __init__(self, name, nodes):
+    def set_name(self, name):
         self.name = name
-        self.nodes = nodes
+
+    def add_node(self, node):
+        self.nodes.append(node)
 
     def get_name(self):
         return self.name

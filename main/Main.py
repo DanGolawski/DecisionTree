@@ -12,16 +12,21 @@ dataset = {'Taste': ['Salty', 'Spicy', 'Spicy', 'Spicy', 'Spicy', 'Sweet', 'Salt
 
 df = pd.DataFrame(dataset, columns=['Taste', 'Temperature', 'Texture', 'Eat'])
 
-# 1. Root Node Entropy
-calculator = main.Managers.EntropyCalculator.EntropyCalculator()
-# rne = calculator.calculateRootNodeEntropy(df['Eat'].to_list())
+##### MAIN METHOD #####
+def main():
+    # 1. Root Node Entropy
+    # calculator = main.Managers.EntropyCalculator.EntropyCalculator()
+    # rne = calculator.calculateRootNodeEntropy(df['Eat'].to_list())
 
-# 2. Gain for every attribute
-# potential_roots = {}
-# for attr in df.columns[:-1]:
-#     # potential_roots.append({attr : calculator.calculateGainForAttribute(rne, df[[attr, 'Eat']])})
-#     potential_roots[attr] = calculator.calculateGainForAttribute(rne, df[[attr, 'Eat']])
+    # 2. Gain for every attribute
+    # potential_roots = {}
+    # for attr in df.columns[:-1]:
+    #     # potential_roots.append({attr : calculator.calculateGainForAttribute(rne, df[[attr, 'Eat']])})
+    #     potential_roots[attr] = calculator.calculateGainForAttribute(rne, df[[attr, 'Eat']])
 
-# 3. Building tree
-builder = main.Managers.TreeBuilder.TreeBuilder()
-builder.build_root_node(df)
+    # 3. Building tree
+    builder = main.Managers.TreeBuilder.TreeBuilder()
+    tree = builder.build_root_node(df)
+    print(tree)
+
+main()
